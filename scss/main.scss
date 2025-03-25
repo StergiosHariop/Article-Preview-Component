@@ -1,0 +1,13 @@
+@import './mixins/mixins.scss';
+@import './variables/variables.scss';
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    @include flexbox(center, center, column);
+}

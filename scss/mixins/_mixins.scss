@@ -1,0 +1,18 @@
+@mixin flexbox($align, $justify, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+  }
+  
+  @mixin fontProps($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+  }
+  
+  @mixin image($color) {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid $color;
+  }
