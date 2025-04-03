@@ -71,6 +71,10 @@ h1 {
   .wrapper {
     @include flexbox(center, space-between, row);
     width: 100%;
+
+    .share-button-wrapper {
+      position: relative;
+    }
   }
   .author-info {
     text-align: left;

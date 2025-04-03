@@ -80,6 +80,9 @@ h1 {
   flex-direction: row;
   width: 100%;
 }
+.author .wrapper .share-button-wrapper {
+  position: relative;
+}
 .author .author-info {
   text-align: left;
 }
