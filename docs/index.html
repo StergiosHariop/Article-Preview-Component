@@ -5,32 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./css/main.css">
+  <script defer src="./main.js"></script>
   <title>Frontend Mentor | Article preview component</title>
 </head>
 <body>
   <main>
+    <h1>App Title</h1>
     <div class="card">
-      <div class="image-container">
-        <img src="./images/drawers.jpg" alt="drawers">
-      </div>
+      <img src="./images/drawers.jpg" alt="drawers" class="header-image">
       <div class="card-content">
-        <h2>Shift the overall look and feel by adding these wonderful 
-          touches to furniture in your home
-        </h2>
-        <p>
-          Ever been in a room and felt like something was missing? Perhaps 
-          it felt slightly bare and uninviting. I’ve got some simple tips 
-          to help you make any room feel complete.
-        </p>
-        <div class="author">
-          <img src="./images/avatar-michelle.jpg" alt="">
-          <div class="author-info">
-            <p>Michelle Appleton</p>
-            <p>28 Jun 2020</p>
+        <section class="info">
+          <h2>Shift the overall look and feel by adding these wonderful 
+            touches to furniture in your home
+          </h2>
+          <p>
+            Ever been in a room and felt like something was missing? Perhaps 
+            it felt slightly bare and uninviting. I’ve got some simple tips 
+            to help you make any room feel complete.
+          </p>
+        </section>
+        <!-- desktop view -->
+        <section class="author" id="author">
+          <img src="./images/avatar-michelle.jpg" alt="michelle-avatar" class="footer-image">
+          <div class="wrapper">
+            <div class="author-info">
+              <p class="name">Michelle Appleton</p>
+              <p class="date">28 Jun 2020</p>
+            </div>
+            <div class="share-button-wrapper" style="position: relative">
+              <button class="share-button desktop" id="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
+                  <path d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z" fill="hsl(214, 17%, 51%)"/>
+                </svg>
+              </button>
+              <!-- Desktop tootlip -->
+              <div class="socials-desktop invisible" id="socials-desktop">
+                <div class="wrapper">
+                  <div class="share">SHARE</div>
+                  <div class="social-buttons">
+                    <a href="#"><img src="./images/icon-facebook.svg" alt="fb-icon"></a>
+                    <a href="#"><img src="./images/icon-twitter.svg" alt="twitter-icon"></a>
+                    <a href="#"><img src="./images/icon-pinterest.svg" alt="pinterest-icon"></a>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
           </div>
-          <button></button>
-        </div>
-      </div>
+        </section>
+        <!-- mobile view tootip -->
+        <section class="socials-mobile author invisible" id="socials-mobile">
+          <p class="share">SHARE</p>
+          <div class="wrapper">
+            <div class="social-buttons">
+              <a href="#"><img src="./images/icon-facebook.svg" alt="fb-icon"></a>
+              <a href="#"><img src="./images/icon-twitter.svg" alt="twitter-icon"></a>
+              <a href="#"><img src="./images/icon-pinterest.svg" alt="pinterest-icon"></a>
+            </div>
+            <button class="share-button mobile">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
+                <path d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z" fill="hsl(214, 17%, 51%)"/>
+              </svg>
+            </button>
+          </div>
+        </section>
     </div>
   </main>
   <footer></footer>

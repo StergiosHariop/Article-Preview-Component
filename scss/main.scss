@@ -1,13 +1,218 @@
 @import './mixins/mixins.scss';
 @import './variables/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  background-color: $Light-Grayish-Blue;
+}
+h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+.card {
+  @include flexbox(center, center, column);
+  text-align: center;
+  background-color: white;
+  width: 330px;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  h2, p {
+    margin: 0;
+  }
+  .header-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  .footer-image {
+    border-radius: 50%;
+    width: 40px;
+    height:40px
+  };
+  .info {
+      padding: 30px 30px 20px 30px;
+      text-align: left;
+
+      h2 {
+        @include fontProps($size-16, $weight-700);
+        margin-bottom: 15px;
+        color: $Dark-Grayish-Blue;
+      }
+
+      p {
+        @include fontProps($size-13, $weight-500);
+        line-height: 20px;
+        margin-right: 9px;
+        word-spacing: 0.7px;
+        color: $Desaturated-Dark-Blue;
+      }
+  }
 }
 
-.card {
-    @include flexbox(center, center, column);
+.author {
+  @include flexbox(center, flex-start, row);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 30px 15px 30px;
+  gap: 15px;
+
+  .wrapper {
+    @include flexbox(center, space-between, row);
+    width: 100%;
+  }
+  .author-info {
+    text-align: left;
+
+    .name {
+      @include fontProps($size-13, $weight-700);
+      color: $Dark-Grayish-Blue;
+      margin-bottom: 5px;
+    }
+
+    .date {
+      @include fontProps($size-13, $weight-500);
+      color: $Grayish-Blue;
+    }
+  }
+}
+
+.socials-mobile {
+  background-color: $Dark-Grayish-Blue;
+  color: $Grayish-Blue;
+  height: 71px;
+  border-radius: 0 0 10px 10px;
+
+  .share {
+    @include fontProps($size-13, light);
+    letter-spacing: 5px;
+  }
+
+  .social-buttons {
+    @include flexbox(center, flex-start, row);
+    gap: 15px;
+  }
+}
+
+.socials-desktop {
+  @include flexbox(center, space-between, row);
+  position: absolute;
+  bottom: 180%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $Dark-Grayish-Blue;
+  color: $Grayish-Blue;
+  border-radius: 10px;
+  width: 255px;
+  z-index: 1;
+  gap: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px $size-13 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 12px;
+    border-style: solid;
+    border-color: $Dark-Grayish-Blue transparent transparent transparent;
+  }
+
+  .wrapper {
+    padding: 18px 35px;
+  }
+
+  .share {
+    @include fontProps($size-13, light);
+    letter-spacing: 5px;
+  }
+
+  .social-buttons {
+    @include flexbox(center, flex-start, row);
+    gap: 15px;
+  }
+}
+
+a {
+  img {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+}
+
+button {
+  border: none;
+  border-radius: 50%;
+  border-style: none;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $Desaturated-Dark-Blue;
+
+    svg path{
+      fill: white;
+    }
+  }
+}
+
+.invisible {
+  display: none;
+}
+
+@media (min-width: 730px) {
+  .card {
+    .header-image {
+      border-radius:  10px 0 0 10px;
+   }
+
+    @include flexbox(center, center, row);
+    width: 730px;
+    height: 280px;
+    flex-direction: row;
+
+    .header-image {
+      flex: 0 0 39%;
+      height: 100%;
+      width: 39%;
+      object-position: left; 
+    }
+
+    .card-content {
+      @include flexbox(center, center, column);
+      flex: 0 0 61%;
+      justify-content: space-between;
+      height: 100%;
+      text-align: left;
+
+      .info {
+        padding: 30px 40px 0px 40px;
+
+        h2 {
+          @include fontProps($size-20, $weight-700);
+        }
+        p {
+          word-spacing: normal;
+        }
+      }
+
+      .author {
+        padding: 0px 40px 30px 40px;
+      }
+    }
+  }
 }
